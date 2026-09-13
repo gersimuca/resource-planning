@@ -210,3 +210,6 @@ otel:
       protocol: grpc
 
   propagators: tracecontext,baggage
+
+machine-registry:
+  max-machine-count: 1024
