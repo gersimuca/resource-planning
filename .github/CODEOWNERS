@@ -1,0 +1,20 @@
+# Default owners
+* @gersimuca
+
+# Application
+/src/ @gersimuca
+
+# Architecture decisions
+/design/adr/ @gersimuca
+
+# Infrastructure
+/docker/ @gersimuca
+/ansible/ @gersimuca
+/cicd/ @gersimuca
+
+# GitHub configuration
+/.github/ @gersimuca
+
+# Build/dependencies
+/pom.xml @gersimuca
+/renovate.json @gersimuca

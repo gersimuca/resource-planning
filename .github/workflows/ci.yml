@@ -31,3 +31,10 @@ jobs:
 
       - name: BE Quality
         run: mvn clean install -P coverage
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: resource-planning-sbom
+          path: target/resource-planning-sbom.json
+          if-no-files-found: error
