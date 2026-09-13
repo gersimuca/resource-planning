@@ -13,6 +13,7 @@ import static org.mockito.Mockito.when;
 
 import com.gersimuca.erp.common.exception.EntityAlreadyExistsException;
 import com.gersimuca.erp.common.exception.EntityNotFoundException;
+import com.gersimuca.erp.common.machine_registry.BusinessKeyGenerator;
 import jakarta.validation.Validator;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,7 @@ class UserServiceImplTest {
   @Mock private UserRepository repository;
   @Mock private UserMapper mapper;
   @Mock private Validator validator;
-  //  @Mock private BusinessKeyGenerator businessKeyGenerator;
+  @Mock private BusinessKeyGenerator businessKeyGenerator;
 
   @InjectMocks private UserServiceImpl service;
 
@@ -43,7 +44,7 @@ class UserServiceImplTest {
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
-    service = new UserServiceImpl(mapper, repository, validator);
+    service = new UserServiceImpl(mapper, repository, validator, businessKeyGenerator);
 
     when(repository.findAll()).thenReturn(List.of(IRON_MAN_ENTITY));
     when(repository.findById(IRON_MAN_ENTITY.getUserId())).thenReturn(Optional.of(IRON_MAN_ENTITY));
