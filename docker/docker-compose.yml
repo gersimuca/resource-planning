@@ -27,7 +27,7 @@ services:
       - "1433:1433"
 
   mongodb:
-    profiles: [ "core" ]
+    profiles: ["core"]
     image: mongo:8.0
     container_name: erp-mongodb
     restart: unless-stopped
