@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>25</java.version>
         <!-- Dependencies -->
-        <springdoc-openapi-webmvc-ui.version>2.8.14</springdoc-openapi-webmvc-ui.version>
+        <springdoc-openapi-webmvc-ui.version>3.1.1</springdoc-openapi-webmvc-ui.version>
         <swagger.annotations.version>2.2.41</swagger.annotations.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <hibernate.jpa.modelgen.version>7.1.10.Final</hibernate.jpa.modelgen.version>
