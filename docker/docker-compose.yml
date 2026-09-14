@@ -26,6 +26,28 @@ services:
     ports:
       - "1433:1433"
 
+  mongodb:
+    profiles: ["core"]
+    image: mongo:8.0
+    container_name: erp-mongodb
+    restart: unless-stopped
+    env_file:
+      - mongodb/mongodb.env
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mongosh --quiet --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand(\"ping\").ok' | grep 1"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
   local-erp-sso:
     profiles: ["auth"]
     container_name: erp-sso
