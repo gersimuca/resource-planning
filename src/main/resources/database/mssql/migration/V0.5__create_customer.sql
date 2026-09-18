@@ -1,6 +1,6 @@
 CREATE TABLE customer
 (
-    customer_id      bigint identity (1,1),
+    customer_id      bigint identity (1,1) primary key,
     name             VARCHAR(255) NOT NULL,
     email            VARCHAR(255),
     phone            VARCHAR(50),
@@ -19,3 +19,11 @@ CREATE TABLE customer
     created_at           datetimeoffset      not null default current_timestamp,
     CONSTRAINT chk_customers_status CHECK (status IN ('PROSPECT', 'ACTIVE', 'INACTIVE', 'CHURNED'))
 );
+
+CREATE INDEX idx_customers_owner_id ON customer (owner_id);
+CREATE INDEX idx_customers_status ON customer (status);
+
+alter table customer
+    add constraint fk_customer_last_updated_user_id foreign key (last_updated_user_id) references users (user_id);
+alter table customer
+    add constraint fk_customer_created_user_id foreign key (created_user_id) references users (user_id);

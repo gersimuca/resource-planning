@@ -1,0 +1,6 @@
+description: Request body for updating a customer.
+required: true
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/customer/CustomerModel.yaml'
