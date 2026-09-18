@@ -150,7 +150,7 @@ services:
 
   kibana:
     profiles: ["logging"]
-    image: docker.elastic.co/kibana/kibana:9.2.1
+    image: docker.elastic.co/kibana/kibana:9.5.4
     container_name: erp-kibana
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
