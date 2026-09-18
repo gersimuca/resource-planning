@@ -1,0 +1,9 @@
+description: Successfully create a customer.
+content:
+  application/json:
+    schema:
+      title: CustomerResponse
+      type: object
+      properties:
+        customer:
+          $ref: '../../schemas/customer/CustomerModel.yaml'

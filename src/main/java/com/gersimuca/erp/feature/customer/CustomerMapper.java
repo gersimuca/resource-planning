@@ -18,6 +18,7 @@ import org.springframework.data.domain.Page;
 public interface CustomerMapper {
   Status toStatus(CustomerStatus status);
 
+  @Mapping(source = "ownerId.userId", target = "ownerId")
   CustomerDto toDto(final CustomerEntity entity);
 
   List<CustomerDto> toDtoList(final List<CustomerEntity> entities);
@@ -34,12 +35,17 @@ public interface CustomerMapper {
   @Mapping(target = "last", source = "last")
   CustomerPageMetadataDto toMetadataDto(Page<CustomerEntity> page);
 
+  @Mapping(target = "ownerId", ignore = true)
+  @Mapping(target = "customerId", ignore = true)
+  @Mapping(target = "deals", ignore = true)
   CustomerEntity toEntity(final CustomerDto dto);
 
   @Mapping(target = "createdAt", ignore = true)
   @Mapping(target = "createdBy", ignore = true)
   @Mapping(target = "lastUpdatedAt", ignore = true)
   @Mapping(target = "lastModifiedBy", ignore = true)
+  @Mapping(target = "ownerId", ignore = true)
+  @Mapping(target = "deals", ignore = true)
   void copyToEntity(CustomerDto dto, @MappingTarget CustomerEntity entity);
 
   @Mapping(target = "customers", source = "customerDtoList")
@@ -54,4 +60,6 @@ public interface CustomerMapper {
   CustomerModel toModel(CustomerDto dto);
 
   List<CustomerModel> toModelList(List<CustomerDto> dtoList);
+
+  CustomerDto toDto(CustomerModel model);
 }

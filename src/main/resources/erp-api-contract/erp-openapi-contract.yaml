@@ -104,6 +104,8 @@ paths:
           $ref: './responses/common/InternalServerError.yaml'
   /customers:
     get:
+      tags:
+        - customer
       summary: Search customers
       operationId: searchCustomers
       parameters:
@@ -148,6 +150,123 @@ paths:
       responses:
         "200":
           $ref: './responses/customer/CustomersPageResponse.yaml'
+        "400":
+          $ref: './responses/common/BadRequest.yaml'
+        "401":
+          $ref: './responses/common/Unauthorized.yaml'
+        "403":
+          $ref: './responses/common/Forbidden.yaml'
+        "404":
+          $ref: './responses/common/NotFound.yaml'
+        "409":
+          $ref: './responses/common/Conflict.yaml'
+        "500":
+          $ref: './responses/common/InternalServerError.yaml'
+    post:
+      tags:
+        - customer
+      summary: Create customer
+      description: Create a new customer.
+      operationId: createCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/customer/CustomerModel.yaml'
+      responses:
+        "201":
+          $ref: './responses/customer/CustomerResponse.yaml'
+        "400":
+          $ref: './responses/common/BadRequest.yaml'
+        "401":
+          $ref: './responses/common/Unauthorized.yaml'
+        "403":
+          $ref: './responses/common/Forbidden.yaml'
+        "404":
+          $ref: './responses/common/NotFound.yaml'
+        "409":
+          $ref: './responses/common/Conflict.yaml'
+        "500":
+          $ref: './responses/common/InternalServerError.yaml'
+  /customers/{id}:
+    get:
+      tags:
+        - customer
+      summary: Get customer by ID
+      description: Retrieve a customer by its ID.
+      operationId: getCustomerById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Customer ID.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          $ref: './responses/customer/CustomerResponse.yaml'
+        "400":
+          $ref: './responses/common/BadRequest.yaml'
+        "401":
+          $ref: './responses/common/Unauthorized.yaml'
+        "403":
+          $ref: './responses/common/Forbidden.yaml'
+        "404":
+          $ref: './responses/common/NotFound.yaml'
+        "409":
+          $ref: './responses/common/Conflict.yaml'
+        "500":
+          $ref: './responses/common/InternalServerError.yaml'
+    put:
+      tags:
+        - customer
+      summary: Update customer
+      description: Update an existing customer.
+      operationId: updateCustomer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Customer ID.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: './requests/customer/UpdateCustomerRequest.yaml'
+      responses:
+        "200":
+          $ref: './responses/customer/CustomerResponse.yaml'
+        "400":
+          $ref: './responses/common/BadRequest.yaml'
+        "401":
+          $ref: './responses/common/Unauthorized.yaml'
+        "403":
+          $ref: './responses/common/Forbidden.yaml'
+        "404":
+          $ref: './responses/common/NotFound.yaml'
+        "409":
+          $ref: './responses/common/Conflict.yaml'
+        "500":
+          $ref: './responses/common/InternalServerError.yaml'
+    delete:
+      tags:
+        - customer
+      summary: Delete customer
+      description: Delete a customer by its ID.
+      operationId: deleteCustomer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Customer ID.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "204":
+          description: Customer successfully deleted.
         "400":
           $ref: './responses/common/BadRequest.yaml'
         "401":

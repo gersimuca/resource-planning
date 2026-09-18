@@ -1,12 +1,17 @@
 package com.gersimuca.erp.feature.user;
 
 import com.gersimuca.erp.common.AuditedEntity;
+import com.gersimuca.erp.feature.customer.CustomerEntity;
+import com.gersimuca.erp.feature.deal.DealEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,4 +53,10 @@ public class UserEntity extends AuditedEntity {
 
   @Column(name = "is_active", nullable = false)
   private Boolean isActive;
+
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerId")
+  private Collection<CustomerEntity> customers;
+
+  @OneToMany(fetch = FetchType.LAZY, mappedBy = "ownerId")
+  private Collection<DealEntity> deals;
 }
