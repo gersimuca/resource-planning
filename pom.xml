@@ -37,7 +37,7 @@
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <codehaus-janino.version>3.1.12</codehaus-janino.version>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
         <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.17.0</openapi-generator-maven-plugin.version>
