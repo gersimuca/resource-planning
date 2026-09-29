@@ -1,4 +1,4 @@
-package com.gersimuca.erp.common.aspect;
+package com.gersimuca.erp.common.aspect.log;
 
 import com.gersimuca.erp.common.util.LoggerUtils;
 import java.time.Duration;

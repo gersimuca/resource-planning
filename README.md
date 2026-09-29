@@ -243,8 +243,8 @@ This application uses *Spring Boot Actuator* to provide basic health checks.
 
 | ***Route***                    | ***Description***                           |
 |--------------------------------|---------------------------------------------|
-| ```/status/health/liveness```  | The application is up and running.          |
-| ```/status/health/readiness``` | The application is ready to serve requests. |
+| ```/customerStatus/health/liveness```  | The application is up and running.          |
+| ```/customerStatus/health/readiness``` | The application is ready to serve requests. |
 
 ### Databases
 
@@ -263,7 +263,7 @@ at [repository](../openapi/erp-openapi-contract.yaml)
 ## Configuration
 
 The application should be configured via environment variables.
-Environment variables will overwrite certain stage/deployment specific properties in the `application.yaml`.
+Environment variables will overwrite certain dealStage/deployment specific properties in the `application.yaml`.
 In OpenShift the environment variables are provided via the `DeploymentConfig`.
 
 | Variable               | Effect                                                                                | Value for local dev                                                                           |
@@ -327,7 +327,7 @@ The configuration is done in [logback.xml](src/main/resources/logback.xml).
 | `HOSTNAME`                | `erp-local`   | Identifier for this application instance             |
 | `APP_ID`                  | `erp-backend` | Logical application ID                               |
 | `ERP_LOGGING_NAMESPACE`   | `local`       | Environment namespace (e.g., `local`, `dev`, `prod`) |
-| `ERP_LOGGING_STAGE`       | `dev`         | Deployment stage                                     |
+| `ERP_LOGGING_STAGE`       | `dev`         | Deployment dealStage                                     |
 
 #### Setting up Kibana Data View
 

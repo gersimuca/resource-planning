@@ -3,7 +3,6 @@ package com.gersimuca.erp.feature.customer;
 import com.gersimuca.erp.common.MapperConfig;
 import com.gersimuca.erp.feature.user.JwtMapper;
 import com.gersimuca.erp.model.CustomerModel;
-import com.gersimuca.erp.model.CustomerStatus;
 import com.gersimuca.erp.model.CustomersPageModel;
 import java.util.List;
 import org.mapstruct.Mapper;
@@ -16,7 +15,7 @@ import org.springframework.data.domain.Page;
  */
 @Mapper(config = MapperConfig.class, uses = JwtMapper.class)
 public interface CustomerMapper {
-  Status toStatus(CustomerStatus status);
+  CustomerStatus toStatus(com.gersimuca.erp.model.CustomerStatus customerStatus);
 
   @Mapping(source = "ownerId.userId", target = "ownerId")
   CustomerDto toDto(final CustomerEntity entity);

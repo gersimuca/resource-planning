@@ -7,7 +7,7 @@ Security fixes are applied to actively maintained versions of the project.
 | Version        | Supported                 |
 | -------------- | ------------------------- |
 | develop        | Yes                       |
-| Older releases | Depends on release status |
+| Older releases | Depends on release customerStatus |
 
 ## Reporting a vulnerability
 

@@ -23,7 +23,7 @@ public class CustomerServiceImpl implements CustomerService {
 
   @Override
   public CustomersPageDto search(
-      final Status status,
+      final CustomerStatus customerStatus,
       final Long ownerId,
       final String search,
       final Integer page,
@@ -31,7 +31,7 @@ public class CustomerServiceImpl implements CustomerService {
       String sort) {
     final Pageable pageable = pageableFactory.create(page, size, sort);
     final Page<CustomerEntity> customerEntityPage =
-        repository.search(status, ownerId, normalizeSearch(search), pageable);
+        repository.search(customerStatus, ownerId, normalizeSearch(search), pageable);
     return mapper.toPageDto(customerEntityPage);
   }
 

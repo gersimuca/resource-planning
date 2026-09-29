@@ -3,7 +3,7 @@ package com.gersimuca.erp.feature.customer;
 /**
  * @author gersimuca
  */
-public enum Status {
+public enum CustomerStatus {
   PROSPECT,
   ACTIVE,
   INACTIVE,
