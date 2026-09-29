@@ -25,7 +25,7 @@ public class CustomerDto {
   private String state;
   private String postalCode;
   private String country;
-  private CustomerStatus customerStatus;
+  private CustomerStatus status;
   private Long ownerId;
   private String notes;
 }

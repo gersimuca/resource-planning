@@ -1,6 +1,7 @@
 package com.gersimuca.erp.feature.deal;
 
 import com.gersimuca.erp.common.repository.BaseRepository;
+import java.util.Collection;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +20,7 @@ interface DealRepository extends BaseRepository<DealEntity, Long> {
           AND (:customerId IS NULL OR d.customerId = :customerId)
         """)
   Page<DealEntity> search(
-      @Param("stage") Stage stage,
+      @Param("stage") DealStage stage,
       @Param("ownerId") Long ownerId,
       @Param("customerId") Long customerId,
       Pageable pageable);
@@ -28,5 +29,5 @@ interface DealRepository extends BaseRepository<DealEntity, Long> {
    * Used by the dashboard/pipeline board, which renders every open deal grouped by stage in one
    * shot.
    */
-  List<DealEntity> findByStageNotInOrderByExpectedCloseDateAsc(List<Stage> closedStages);
+  List<DealEntity> findByStageNotInOrderByExpectedCloseDateAsc(Collection<DealStage> stage);
 }

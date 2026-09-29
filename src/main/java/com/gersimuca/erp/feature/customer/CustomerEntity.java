@@ -64,7 +64,7 @@ public class CustomerEntity extends AuditedEntity {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "status", nullable = false, length = 20)
-  private CustomerStatus customerStatus;
+  private CustomerStatus status;
 
   @ManyToOne
   @JoinColumn(name = "owner_id", nullable = false)

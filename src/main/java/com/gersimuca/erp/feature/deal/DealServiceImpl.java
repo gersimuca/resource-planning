@@ -13,14 +13,15 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class DealServiceImpl implements DealService {
 
-  private static final List<Stage> CLOSED_STAGES = List.of(Stage.CLOSED_WON, Stage.CLOSED_LOST);
+  private static final List<DealStage> CLOSED_STAGES =
+      List.of(DealStage.CLOSED_WON, DealStage.CLOSED_LOST);
 
   private final DealRepository dealRepository;
   private final DealMapper dealMapper;
 
   @Override
   public Page<DealDto> search(
-      final Stage stage, final Long ownerId, final Long customerId, final Pageable pageable) {
+      final DealStage stage, final Long ownerId, final Long customerId, final Pageable pageable) {
 
     return dealRepository.search(stage, ownerId, customerId, pageable).map(dealMapper::toDto);
   }

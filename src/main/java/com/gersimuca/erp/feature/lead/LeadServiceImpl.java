@@ -75,7 +75,7 @@ public class LeadServiceImpl implements LeadService {
                 .email(lead.getEmail())
                 .phone(lead.getPhone())
                 .company(lead.getCompany())
-                .customerStatus(CustomerStatus.ACTIVE)
+                .status(CustomerStatus.ACTIVE)
                 .ownerId(lead.getOwnerId())
                 .notes("Converted from lead #%d.".formatted(lead.getLeadId()))
                 .build());

@@ -16,7 +16,7 @@ interface CustomerRepository extends BaseRepository<CustomerEntity, Long> {
   @Query(
       """
             SELECT c FROM CustomerEntity c
-            WHERE (:customerStatus IS NULL OR c.customerStatus = :customerStatus)
+            WHERE (:customerStatus IS NULL OR c.status = :status)
               AND (:ownerId IS NULL OR c.ownerId = :ownerId)
               AND (:search IS NULL
                    OR LOWER(c.name) LIKE LOWER(CONCAT('%', :search, '%'))
@@ -24,7 +24,7 @@ interface CustomerRepository extends BaseRepository<CustomerEntity, Long> {
                    OR LOWER(c.company) LIKE LOWER(CONCAT('%', :search, '%')))
             """)
   Page<CustomerEntity> search(
-      @Param("customerStatus") CustomerStatus customerStatus,
+      @Param("status") CustomerStatus status,
       @Param("ownerId") Long ownerId,
       @Param("search") String search,
       Pageable pageable);
