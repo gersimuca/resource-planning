@@ -44,7 +44,7 @@ public class DealEntity extends AuditedEntity {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "stage", nullable = false, length = 20)
-  private DealStage stage;
+  private Stage stage;
 
   @Column(name = "amount", precision = 14, scale = 2)
   private BigDecimal amount;

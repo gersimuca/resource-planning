@@ -13,26 +13,22 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class DealServiceImpl implements DealService {
 
-  private static final List<DealStage> CLOSED_DEAL_STAGES =
-      List.of(DealStage.CLOSED_WON, DealStage.CLOSED_LOST);
+  private static final List<Stage> CLOSED_STAGES = List.of(Stage.CLOSED_WON, Stage.CLOSED_LOST);
 
   private final DealRepository dealRepository;
   private final DealMapper dealMapper;
 
   @Override
   public Page<DealDto> search(
-      final DealStage dealStage,
-      final Long ownerId,
-      final Long customerId,
-      final Pageable pageable) {
+      final Stage stage, final Long ownerId, final Long customerId, final Pageable pageable) {
 
-    return dealRepository.search(dealStage, ownerId, customerId, pageable).map(dealMapper::toDto);
+    return dealRepository.search(stage, ownerId, customerId, pageable).map(dealMapper::toDto);
   }
 
   @Override
   public List<DealDto> findOpenPipeline() {
     final List<DealEntity> deals =
-        dealRepository.findByStageNotInOrderByExpectedCloseDateAsc(CLOSED_DEAL_STAGES);
+        dealRepository.findByStageNotInOrderByExpectedCloseDateAsc(CLOSED_STAGES);
 
     return dealMapper.toDtoList(deals);
   }

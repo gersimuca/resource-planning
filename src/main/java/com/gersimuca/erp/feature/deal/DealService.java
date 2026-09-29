@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 
 public interface DealService {
 
-  Page<DealDto> search(DealStage dealStage, Long ownerId, Long customerId, Pageable pageable);
+  Page<DealDto> search(Stage stage, Long ownerId, Long customerId, Pageable pageable);
 
   /** All deals that have not yet closed, ordered for a kanban-style pipeline board. */
   List<DealDto> findOpenPipeline();
