@@ -61,6 +61,5 @@ public interface CustomerMapper {
 
   List<CustomerModel> toModelList(List<CustomerDto> dtoList);
 
-  @Mapping(target = "customerStatus", source = "status")
   CustomerDto toDto(CustomerModel model);
 }

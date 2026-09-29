@@ -24,7 +24,7 @@ public class DealDto {
 
   @NotBlank private String title;
 
-  @NotNull private DealStage stage;
+  @NotNull private Stage stage;
 
   @PositiveOrZero private BigDecimal amount;
 
