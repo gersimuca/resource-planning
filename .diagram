@@ -438,7 +438,7 @@ otel_cfg -> otel_collector {
 
 metrics_cfg -> prometheus {
   id: gen-edge-37
-  label: "/status/prometheus"
+  label: "/customerStatus/prometheus"
 }
 
 otel_collector -> prometheus {

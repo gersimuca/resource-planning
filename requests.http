@@ -48,29 +48,29 @@ GET {{Api-URL}}/api/swagger-ui/index.html
 
 ### Liveness Check
 # @no-cookie-jar
-GET {{Health-URL}}/status/health/liveness
+GET {{Health-URL}}/customerStatus/health/liveness
 
 > {%
     import {assertResponseStatus, assertResponseBodyPropertyHasValue} from './rest-client.util.js'
 
     assertResponseStatus(200)
-    assertResponseBodyPropertyHasValue("status", "UP")
+    assertResponseBodyPropertyHasValue("customerStatus", "UP")
 %}
 
 ### Readiness Check
 # @no-cookie-jar
-GET {{Health-URL}}/status/health/readiness
+GET {{Health-URL}}/customerStatus/health/readiness
 
 > {%
     import {assertResponseStatus, assertResponseBodyPropertyHasValue} from './rest-client.util.js'
 
     assertResponseStatus(200)
-    assertResponseBodyPropertyHasValue("status", "UP")
+    assertResponseBodyPropertyHasValue("customerStatus", "UP")
 %}
 
 ### Prometheus Check
 # @no-cookie-jar
-GET {{Health-URL}}/status/prometheus
+GET {{Health-URL}}/customerStatus/prometheus
 
 > {%
     import {assertResponseStatus, assertResponseBodyTextContains} from './rest-client.util.js'

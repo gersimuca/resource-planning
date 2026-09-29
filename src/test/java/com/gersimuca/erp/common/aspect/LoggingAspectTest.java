@@ -7,6 +7,7 @@ import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
+import com.gersimuca.erp.common.aspect.log.LoggingAspect;
 import com.gersimuca.erp.common.util.LoggerUtils;
 import java.lang.reflect.Field;
 import java.time.Duration;

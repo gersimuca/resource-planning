@@ -14,19 +14,19 @@ interface DealRepository extends BaseRepository<DealEntity, Long> {
   @Query(
       """
         SELECT d FROM DealEntity d
-        WHERE (:stage IS NULL OR d.stage = :stage)
+        WHERE (:dealStage IS NULL OR d.dealStage = :dealStage)
           AND (:ownerId IS NULL OR d.ownerId = :ownerId)
           AND (:customerId IS NULL OR d.customerId = :customerId)
         """)
   Page<DealEntity> search(
-      @Param("stage") Stage stage,
+      @Param("dealStage") DealStage dealStage,
       @Param("ownerId") Long ownerId,
       @Param("customerId") Long customerId,
       Pageable pageable);
 
   /**
-   * Used by the dashboard/pipeline board, which renders every open deal grouped by stage in one
+   * Used by the dashboard/pipeline board, which renders every open deal grouped by dealStage in one
    * shot.
    */
-  List<DealEntity> findByStageNotInOrderByExpectedCloseDateAsc(List<Stage> closedStages);
+  List<DealEntity> findByStageNotInOrderByExpectedCloseDateAsc(List<DealStage> closedDealStages);
 }

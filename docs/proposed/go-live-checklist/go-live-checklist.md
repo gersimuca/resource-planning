@@ -32,7 +32,7 @@ This is a working document to be checked for completeness.
 | OpenShift - Should implement a Service for all deployments. | CRITICAL | Deployment | A Service automatically load balances incoming requests across all available replicas | 1 week prior to Go-Live date | OPEN | |
 | OpenShift - resilience: application needs to tolerate losing pods<br>must use replicas >= 2 for production deployments<br>must use PodPriority (prod/nonprod) in deployments<br>should implement PodDisruptionBudget to guide the cluster for possible disruptions | MEDIUM | Availability | Ensures continuous availability of the service, even if a pod crashes. | 1 week prior to Go-Live date | OPEN | |
 | Monitoring interfaces to ensure they are functioning.<br>The following interfaces may be live during production (CoCa, SD, CDmS) | MEDIUM | Monitoring | Use Spring Boot metrics & Grafana<br>Scan log files | week prior to Go-Live date | OPEN | |
-| Setup proper logging<br>must include ERP common schema attributes: stage,erpappid & log-message<br>should use use severity as log level attribute<br>should use WARN or ERROR as severity for production | MEDIUM | Monitoring | Kibana setup | week prior to Go-Live date | OPEN | |
+| Setup proper logging<br>must include ERP common schema attributes: dealStage,erpappid & log-message<br>should use use severity as log level attribute<br>should use WARN or ERROR as severity for production | MEDIUM | Monitoring | Kibana setup | week prior to Go-Live date | OPEN | |
 | Ensure §5 documented deletion policies are feasible and work | MEDIUM | Compliance | All deletion concepts listed in §5 document must be implemented | week prior to Go-Live date | OPEN | |
 | Check snyk for image vulnerabilities at least two weeks prior to go live | LOW | Security | | 1 week prior to Go-Live date | OPEN | |
 | SonarQube issues fixed (scan should pass on develop / master) | MEDIUM | Quality | Issues here could mean bugs, errors | 1 week prior to Go-Live date | OPEN | |
@@ -65,4 +65,4 @@ This is a working document to be checked for completeness.
 | Train key users | | | | | OPEN | |
 | Global Export Control when geo free does not work as 'global', according to requirements | MEDIUM | Security | | 1 week prior to Go-Live date | OPEN | |
 | Training and coaching with key provider's phase (key users, expert access, are ongoing) | MEDIUM | Workflow | | | OPEN | |
-| Communication to all involved parties about application status and timeline separately first are set go live S&P / CDMS | | | | | OPEN | |
+| Communication to all involved parties about application customerStatus and timeline separately first are set go live S&P / CDMS | | | | | OPEN | |

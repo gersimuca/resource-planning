@@ -16,7 +16,7 @@
                         "host": "${HOSTNAME}",
                         "appid": "${APP_ID}",
                         "namespace": "${ERP_LOGGING_NAMESPACE}",
-                        "stage": "${ERP_LOGGING_STAGE}"
+                        "dealStage": "${ERP_LOGGING_STAGE}"
                         }
                     </customFields>
                 </encoder>

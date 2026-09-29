@@ -1,5 +1,5 @@
 INSERT INTO deal
-(deal_id, customer_id, title, stage, amount, expected_close_date, owner_id, notes)
+(deal_id, customer_id, title, dealStage, amount, expected_close_date, owner_id, notes)
 VALUES
     (1, 1, 'Northwind annual renewal', 'NEGOTIATION', 42000.00,
      DATEADD(DAY, 18, CAST(GETDATE() AS DATE)), 2,

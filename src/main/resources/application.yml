@@ -213,3 +213,13 @@ otel:
 
 machine-registry:
   max-machine-count: 1024
+auth:
+  jwt:
+    secret: ${JWT_SECRET:}
+    access-token-ttl-minutes: ${JWT_ACCESS_TOKEN_TTL_MINUTES:}
+    refresh-token-ttl-days: ${JWT_REFRESH_TOKEN_TTL_DAYS:}
+  session:
+    ttl-minutes: ${SESSION_TTL_MINUTES:}
+    # false so works over plain http://localhost. Set true once this runs behind HTTPS --
+    # browsers (and curl's cookie jar) silently drop "Secure" cookies sent over plain http.
+    cookie-secure: ${SESSION_COOKIE_SECURE:}

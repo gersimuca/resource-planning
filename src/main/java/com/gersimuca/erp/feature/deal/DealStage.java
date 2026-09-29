@@ -1,6 +1,6 @@
 package com.gersimuca.erp.feature.deal;
 
-public enum Stage {
+public enum DealStage {
   PROSPECTING,
   QUALIFICATION,
   PROPOSAL,

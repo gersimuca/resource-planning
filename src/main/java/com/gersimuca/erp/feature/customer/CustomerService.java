@@ -5,7 +5,12 @@ package com.gersimuca.erp.feature.customer;
  */
 public interface CustomerService {
   CustomersPageDto search(
-      Status status, Long ownerId, String search, Integer page, Integer size, String sort);
+      CustomerStatus customerStatus,
+      Long ownerId,
+      String search,
+      Integer page,
+      Integer size,
+      String sort);
 
   CustomerDto findById(Long id);
 
