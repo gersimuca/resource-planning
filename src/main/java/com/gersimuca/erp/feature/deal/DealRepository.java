@@ -14,12 +14,12 @@ interface DealRepository extends BaseRepository<DealEntity, Long> {
   @Query(
       """
         SELECT d FROM DealEntity d
-        WHERE (:dealStage IS NULL OR d.dealStage = :dealStage)
+        WHERE (:dealStage IS NULL OR d.stage = :stage)
           AND (:ownerId IS NULL OR d.ownerId = :ownerId)
           AND (:customerId IS NULL OR d.customerId = :customerId)
         """)
   Page<DealEntity> search(
-      @Param("dealStage") DealStage dealStage,
+      @Param("stage") DealStage stage,
       @Param("ownerId") Long ownerId,
       @Param("customerId") Long customerId,
       Pageable pageable);

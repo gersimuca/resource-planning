@@ -1,5 +1,5 @@
 INSERT INTO customer (customer_id, name, email, phone, company, address_line, city, state, postal_code, country,
-                       customerStatus, owner_id, notes)
+                       status, owner_id, notes)
 VALUES (1, 'Northwind Traders', 'contact@northwindtraders.com', '+1-206-555-0110', 'Northwind Traders',
         '400 Pike St', 'Seattle', 'WA', '98101', 'USA', 'ACTIVE', 2, 'Long-standing account, quarterly reviews.'),
        (2, 'Bluepeak Analytics', 'hello@bluepeak.io', '+1-415-555-0182', 'Bluepeak Analytics', '55 Market St',

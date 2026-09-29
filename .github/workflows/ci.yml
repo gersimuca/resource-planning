@@ -50,39 +50,31 @@ jobs:
       - name: Set up Java 25
         uses: actions/setup-java@v5
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '25'
-
-      - name: Cache Maven packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          cache: maven
 
       - name: Set Maven wrapper executable
         run: chmod +x mvnw
 
       - name: Build artifact - first build
-        run: mvn clean package -P coverage
+        run: ./mvnw --batch-mode clean package -P coverage
 
       - name: Calculate first build hash
         run: |
-          sha256sum target/*.jar > /tmp/hash-first.txt
+          sha256sum target/*.jar | sort -k2 > /tmp/hash-first.txt
           cat /tmp/hash-first.txt
 
       - name: Clean build output
-        run: mvn clean
+        run: ./mvnw --batch-mode clean
 
       - name: Build artifact - second build
-        run: mvn package -P coverage
+        run: ./mvnw --batch-mode clean package -P coverage
 
       - name: Calculate second build hash
         run: |
-          sha256sum target/*.jar > /tmp/hash-second.txt
+          sha256sum target/*.jar | sort -k2 > /tmp/hash-second.txt
           cat /tmp/hash-second.txt
 
       - name: Compare artifact hashes
-        run: |
-          diff -u /tmp/hash-first.txt /tmp/hash-second.txt
+        run: diff -u /tmp/hash-first.txt /tmp/hash-second.txt

@@ -21,7 +21,7 @@ import lombok.Setter;
  * and/or lead.
  */
 @Entity
-@Table(name = "interactions")
+@Table(name = "interaction")
 @Getter
 @Setter
 @Builder(toBuilder = true)

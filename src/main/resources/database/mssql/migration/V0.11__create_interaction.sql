@@ -2,12 +2,12 @@ CREATE TABLE interaction
 (
     interaction_id BIGINT IDENTITY(1,1) NOT NULL,
     customer_id BIGINT NULL,
-    lead_id     BIGINT NULL,
-    type        VARCHAR(20)  NOT NULL,
-    subject     VARCHAR(255) NOT NULL,
+    lead_id BIGINT NULL,
+    type VARCHAR(20) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
     description VARCHAR(MAX) NULL,
-    customerStatus      VARCHAR(20) NOT NULL CONSTRAINT df_interaction_status DEFAULT 'OPEN',
-    occurred_at DATETIMEOFFSET NOT NULL CONSTRAINT df_interaction_occurred_at DEFAULT current_timestamp,
+    status VARCHAR(20) NOT NULL DEFAULT 'OPEN',
+    occurred_at DATETIMEOFFSET NOT NULL DEFAULT CURRENT_TIMESTAMP,
     owner_id BIGINT NULL,
     last_updated_user_id bigint        not null default 1,
     last_updated_at      datetimeoffset      not null default current_timestamp,
@@ -19,13 +19,13 @@ CREATE TABLE interaction
 ALTER TABLE interaction
     ADD CONSTRAINT fk_interaction_customer
         FOREIGN KEY (customer_id)
-            REFERENCES customers (customer_id)
+            REFERENCES customer (customer_id)
             ON DELETE CASCADE;
 
 ALTER TABLE interaction
     ADD CONSTRAINT fk_interaction_lead
         FOREIGN KEY (lead_id)
-            REFERENCES leads (lead_id)
+            REFERENCES lead (lead_id)
             ON DELETE CASCADE;
 
 ALTER TABLE interaction
@@ -58,7 +58,7 @@ ALTER TABLE interaction
 ALTER TABLE interaction
     ADD CONSTRAINT chk_interaction_status
         CHECK (
-            customerStatus IN (
+            status IN (
                        'OPEN',
                        'IN_PROGRESS',
                        'RESOLVED',

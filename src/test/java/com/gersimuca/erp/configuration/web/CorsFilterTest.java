@@ -47,7 +47,7 @@ class CorsFilterTest {
             header()
                 .string(
                     HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS,
-                    "POST, PUT, PATCH, GET, OPTIONS, DELETE"))
+                    "POST, PUT, PATCH, GET, OPTIONS, DELETE, QUERY"))
         .andExpect(header().string(HttpHeaders.ACCESS_CONTROL_MAX_AGE, "3600"))
         .andExpect(
             header()
@@ -71,7 +71,7 @@ class CorsFilterTest {
             header()
                 .string(
                     HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS,
-                    "POST, PUT, PATCH, GET, OPTIONS, DELETE"))
+                    "POST, PUT, PATCH, GET, OPTIONS, DELETE, QUERY"))
         .andExpect(header().string(HttpHeaders.ACCESS_CONTROL_MAX_AGE, "3600"))
         .andExpect(
             header()

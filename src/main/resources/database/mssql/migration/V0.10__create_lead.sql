@@ -6,17 +6,19 @@ CREATE TABLE lead
     email   VARCHAR(255) NULL,
     phone   VARCHAR(50) NULL,
     company VARCHAR(255) NULL,
-    source VARCHAR(30) NOT NULL CONSTRAINT df_lead_source DEFAULT 'OTHER',
-    customerStatus VARCHAR(20) NOT NULL CONSTRAINT df_lead_status DEFAULT 'NEW',
+    source VARCHAR(30) NOT NULL DEFAULT 'OTHER',
+    status VARCHAR(20) NOT NULL DEFAULT 'NEW',
     estimated_value NUMERIC(14, 2) NULL,
     owner_id BIGINT NULL,
     converted_customer_id BIGINT NULL,
     notes VARCHAR(MAX) NULL,
-    last_updated_user_id bigint        not null default 1,
-    last_updated_at      datetimeoffset      not null default current_timestamp,
-    created_user_id      bigint        not null default 1,
-    created_at           datetimeoffset      not null default current_timestamp,
-    CONSTRAINT pk_lead PRIMARY KEY (lead_id)
+    last_updated_user_id BIGINT NOT NULL DEFAULT 1,
+    last_updated_at DATETIMEOFFSET NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_user_id BIGINT NOT NULL DEFAULT 1,
+    created_at DATETIMEOFFSET NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT pk_lead
+        PRIMARY KEY (lead_id)
 );
 
 ALTER TABLE lead
@@ -27,7 +29,7 @@ ALTER TABLE lead
 ALTER TABLE lead
     ADD CONSTRAINT fk_lead_converted_customer
         FOREIGN KEY (converted_customer_id)
-            REFERENCES customers (customer_id);
+            REFERENCES customer (customer_id);
 
 ALTER TABLE lead
     ADD CONSTRAINT fk_lead_last_updated_user
@@ -56,7 +58,7 @@ ALTER TABLE lead
 ALTER TABLE lead
     ADD CONSTRAINT chk_lead_status
         CHECK (
-            customerStatus IN (
+            status IN (
                        'NEW',
                        'CONTACTED',
                        'QUALIFIED',
@@ -68,6 +70,6 @@ ALTER TABLE lead
 
 CREATE INDEX idx_lead_owner_id ON lead (owner_id);
 
-CREATE INDEX idx_lead_status ON lead (customerStatus);
+CREATE INDEX idx_lead_status ON lead (status);
 
 CREATE INDEX idx_lead_converted_customer_id ON lead (converted_customer_id);

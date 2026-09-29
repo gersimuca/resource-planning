@@ -56,6 +56,7 @@ public interface CustomerMapper {
   @Mapping(target = "last", source = "metadataDto.last")
   CustomersPageModel toResponse(CustomersPageDto dto);
 
+  @Mapping(target = "status", source = "customerStatus")
   CustomerModel toModel(CustomerDto dto);
 
   List<CustomerModel> toModelList(List<CustomerDto> dtoList);

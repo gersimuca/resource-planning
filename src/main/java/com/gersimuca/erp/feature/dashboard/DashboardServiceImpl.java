@@ -66,7 +66,7 @@ public class DashboardServiceImpl implements DashboardService {
     final BigDecimal openPipelineValue = sumAmounts(openPipeline);
     final List<DashboardSummaryDto.StageBreakdown> dealsByStage =
         openPipeline.stream()
-            .collect(Collectors.groupingBy(deal -> deal.getDealStage().name()))
+            .collect(Collectors.groupingBy(deal -> deal.getStage().name()))
             .entrySet()
             .stream()
             .map(

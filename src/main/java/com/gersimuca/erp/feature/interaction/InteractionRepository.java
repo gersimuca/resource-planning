@@ -15,19 +15,19 @@ interface InteractionRepository extends BaseRepository<InteractionEntity, Long> 
 
   @Query(
       """
-        SELECT i FROM InteractionEntity i
-        WHERE (:customerId IS NULL OR i.customerId = :customerId)
-          AND (:leadId IS NULL OR i.leadId = :leadId)
-          AND (:type IS NULL OR i.type = :type)
-          AND (:customerStatus IS NULL OR i.customerStatus = :customerStatus)
-          AND (:ownerId IS NULL OR i.ownerId = :ownerId)
-        ORDER BY i.occurredAt DESC
-        """)
+      SELECT i FROM InteractionEntity i
+      WHERE (:customerId IS NULL OR i.customerId = :customerId)
+        AND (:leadId IS NULL OR i.leadId = :leadId)
+        AND (:type IS NULL OR i.type = :type)
+        AND (:status IS NULL OR i.status = :status)
+        AND (:ownerId IS NULL OR i.ownerId = :ownerId)
+      ORDER BY i.occurredAt DESC
+      """)
   Page<InteractionEntity> search(
       @Param("customerId") Long customerId,
       @Param("leadId") Long leadId,
       @Param("type") Type type,
-      @Param("customerStatus") Status customerStatus,
+      @Param("status") Status status,
       @Param("ownerId") Long ownerId,
       Pageable pageable);
 }
