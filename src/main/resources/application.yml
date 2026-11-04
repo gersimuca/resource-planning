@@ -19,7 +19,6 @@ spring:
       fail-on-empty-beans: false
       close-closeable: true
       flush-after-write-value: true
-      write-date-keys-as-timestamps: false
     deserialization:
       fail-on-unknown-properties: false
   datasource:

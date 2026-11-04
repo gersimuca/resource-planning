@@ -28,8 +28,8 @@ public class InteractionController {
   public Page<InteractionDto> search(
       @RequestParam(required = false) final Long customerId,
       @RequestParam(required = false) final Long leadId,
-      @RequestParam(required = false) final Type type,
-      @RequestParam(required = false) final Status status,
+      @RequestParam(required = false) final InteractionType type,
+      @RequestParam(required = false) final InteractionStatus status,
       @RequestParam(required = false) final Long ownerId,
       @PageableDefault(size = 20) final Pageable pageable) {
     return service.search(customerId, leadId, type, status, ownerId, pageable);

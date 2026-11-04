@@ -6,7 +6,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import com.gersimuca.erp.configuration.authenticated.WithMockJwtToken;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.test.context.ActiveProfiles;
 
 @Target(TYPE)

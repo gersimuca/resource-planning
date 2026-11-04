@@ -1,15 +1,15 @@
 package com.gersimuca.erp.configuration.jackson;
 
-import org.openapitools.jackson.nullable.JsonNullableModule;
-import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
+import org.openapitools.jackson.nullable.JsonNullableJackson3Module;
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class JacksonConfig {
 
   @Bean
-  public Jackson2ObjectMapperBuilderCustomizer jsonNullableCustomizer() {
-    return builder -> builder.modulesToInstall(new JsonNullableModule());
+  public JsonMapperBuilderCustomizer jsonNullableCustomizer() {
+    return builder -> builder.addModule(new JsonNullableJackson3Module());
   }
 }

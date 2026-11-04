@@ -20,8 +20,8 @@ public class InteractionServiceImpl implements InteractionService {
   public Page<InteractionDto> search(
       final Long customerId,
       final Long leadId,
-      final Type type,
-      final Status status,
+      final InteractionType type,
+      final InteractionStatus status,
       final Long ownerId,
       final Pageable pageable) {
     return repository

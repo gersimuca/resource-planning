@@ -26,8 +26,8 @@ interface InteractionRepository extends BaseRepository<InteractionEntity, Long> 
   Page<InteractionEntity> search(
       @Param("customerId") Long customerId,
       @Param("leadId") Long leadId,
-      @Param("type") Type type,
-      @Param("status") Status status,
+      @Param("type") InteractionType type,
+      @Param("status") InteractionStatus status,
       @Param("ownerId") Long ownerId,
       Pageable pageable);
 }

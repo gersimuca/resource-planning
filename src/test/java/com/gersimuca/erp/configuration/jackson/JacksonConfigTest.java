@@ -2,28 +2,20 @@ package com.gersimuca.erp.configuration.jackson;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.openapitools.jackson.nullable.JsonNullableJackson3Module;
+import org.springframework.boot.jackson.autoconfigure.JsonMapperBuilderCustomizer;
+import tools.jackson.databind.json.JsonMapper;
 
 class JacksonConfigTest {
 
   @Test
   void jsonNullableCustomizer_shouldRegisterModule() {
-
     JacksonConfig config = new JacksonConfig();
-
-    Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
-
-    config.jsonNullableCustomizer().customize(builder);
-
-    ObjectMapper mapper = builder.build();
-
-    boolean containsModule =
-        mapper.getRegisteredModuleIds().stream()
-            .map(Object::toString)
-            .anyMatch(id -> id.contains("JsonNullableModule"));
-
-    assertThat(containsModule).isTrue();
+    JsonMapper.Builder builder = JsonMapper.builder();
+    JsonMapperBuilderCustomizer customizer = config.jsonNullableCustomizer();
+    customizer.customize(builder);
+    JsonMapper mapper = builder.build();
+    assertThat(mapper.registeredModules()).anyMatch(JsonNullableJackson3Module.class::isInstance);
   }
 }
