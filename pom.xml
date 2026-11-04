@@ -51,7 +51,7 @@
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.language>java</sonar.language>
         <!-- OpenTelemetry Properties -->
-        <opentelemetry-bom.version>1.64.0</opentelemetry-bom.version>
+        <opentelemetry-bom.version>1.67.0</opentelemetry-bom.version>
         <opentelemetry-spring-boot-starter.version>2.30.0</opentelemetry-spring-boot-starter.version>
         <!-- Apache Pekko -->
         <pekko-actor-typed_2.13.version>1.1.2</pekko-actor-typed_2.13.version>
