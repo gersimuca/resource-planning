@@ -60,7 +60,7 @@
         <cyclonedx-maven-plugin.version>2.9.2</cyclonedx-maven-plugin.version>
         <!-- File Import -->
         <apache-poi.version>5.4.1</apache-poi.version>
-        <opencsv.version>5.10</opencsv.version>
+        <opencsv.version>5.12.0</opencsv.version>
         <!-- Sanitization -->
         <jsoup.version>1.23.2</jsoup.version>
         <!-- Utils -->
