@@ -62,7 +62,7 @@
         <apache-poi.version>5.4.1</apache-poi.version>
         <opencsv.version>5.10</opencsv.version>
         <!-- Sanitization -->
-        <jsoup.version>1.23.2</jsoup.version>
+        <jsoup.version>1.24.1</jsoup.version>
         <!-- Utils -->
         <apache-commons-text.version>1.15.0</apache-commons-text.version>
     </properties>
