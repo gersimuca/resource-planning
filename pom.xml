@@ -34,7 +34,7 @@
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <!-- Plugins -->
         <fmt-maven-plugin.version>2.29</fmt-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
         <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <codehaus-janino.version>3.1.12</codehaus-janino.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
