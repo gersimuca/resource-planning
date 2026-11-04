@@ -57,7 +57,7 @@
         <pekko-actor-typed_2.13.version>1.1.2</pekko-actor-typed_2.13.version>
         <pekko-slf4j_2.13.version>1.1.2</pekko-slf4j_2.13.version>
         <!-- SBOM -->
-        <cyclonedx-maven-plugin.version>2.9.2</cyclonedx-maven-plugin.version>
+        <cyclonedx-maven-plugin.version>2.9.3</cyclonedx-maven-plugin.version>
     </properties>
 
     <scm>
