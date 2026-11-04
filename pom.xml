@@ -55,7 +55,7 @@
         <opentelemetry-spring-boot-starter.version>2.30.0</opentelemetry-spring-boot-starter.version>
         <!-- Apache Pekko -->
         <pekko-actor-typed_2.13.version>1.1.2</pekko-actor-typed_2.13.version>
-        <pekko-slf4j_2.13.version>1.1.2</pekko-slf4j_2.13.version>
+        <pekko-slf4j_2.13.version>1.7.1</pekko-slf4j_2.13.version>
         <!-- SBOM -->
         <cyclonedx-maven-plugin.version>2.9.2</cyclonedx-maven-plugin.version>
         <!-- File Import -->
