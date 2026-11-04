@@ -21,10 +21,10 @@ public class InteractionDto {
   private Long interactionId;
   private Long customerId;
   private Long leadId;
-  @NotNull private Type type;
+  @NotNull private InteractionType type;
   @NotBlank private String subject;
   private String description;
-  @NotNull private Status status;
+  @NotNull private InteractionStatus status;
   private OffsetDateTime occurredAt;
   private Long ownerId;
 }

@@ -19,6 +19,9 @@ spring:
       platform: org.hibernate.dialect.SQLServerDialect
   security:
     oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8180/auth/realms/ERP/protocol/openid-connect/certs
       client:
         provider:
           core_calculation:

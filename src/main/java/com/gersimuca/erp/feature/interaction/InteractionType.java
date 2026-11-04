@@ -3,7 +3,7 @@ package com.gersimuca.erp.feature.interaction;
 /**
  * @author gersimuca
  */
-public enum Type {
+public enum InteractionType {
   CALL,
   EMAIL,
   MEETING,

@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.toSet;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -26,7 +27,7 @@ public class JwtAuthenticationConverter implements Converter<Jwt, AbstractAuthen
   @Override
   public AbstractAuthenticationToken convert(final Jwt jwt) {
     return new JwtAuthenticationToken(
-        jwt, extractResourceRoles(jwt, clientId), jwt.getClaim(U_NUMBER_FIELD));
+        jwt, extractResourceRoles(jwt, clientId), Objects.toString(jwt.getClaim(U_NUMBER_FIELD)));
   }
 
   @SuppressWarnings("unchecked")

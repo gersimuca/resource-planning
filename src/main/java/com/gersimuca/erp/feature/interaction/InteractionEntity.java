@@ -41,7 +41,7 @@ public class InteractionEntity extends AuditedEntity {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "type", nullable = false, length = 20)
-  private Type type;
+  private InteractionType type;
 
   @Column(name = "subject", nullable = false)
   private String subject;
@@ -51,7 +51,7 @@ public class InteractionEntity extends AuditedEntity {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "status", nullable = false, length = 20)
-  private Status status;
+  private InteractionStatus status;
 
   @Column(name = "occurred_at", nullable = false)
   private OffsetDateTime occurredAt;

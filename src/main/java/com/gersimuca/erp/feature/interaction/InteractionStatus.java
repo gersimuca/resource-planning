@@ -3,7 +3,7 @@ package com.gersimuca.erp.feature.interaction;
 /**
  * @author gersimuca
  */
-public enum Status {
+public enum InteractionStatus {
   OPEN,
   IN_PROGRESS,
   RESOLVED,

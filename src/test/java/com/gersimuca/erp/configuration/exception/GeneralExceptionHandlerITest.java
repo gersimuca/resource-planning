@@ -9,7 +9,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gersimuca.erp.AuthenticatedMvcTest;
 import com.gersimuca.erp.common.exception.BaseException;
 import com.gersimuca.erp.common.exception.EntityNotFoundException;
@@ -23,15 +22,15 @@ import java.util.Objects;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.openapitools.jackson.nullable.JsonNullableModule;
+import org.openapitools.jackson.nullable.JsonNullableJackson3Module;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
+import tools.jackson.databind.json.JsonMapper;
 
 @AuthenticatedMvcTest
 @SpringBootTest
@@ -136,8 +135,7 @@ class GeneralExceptionHandlerITest {
 
     @Test
     void shouldDeserializePresentValue() throws Exception {
-      ObjectMapper mapper =
-          new Jackson2ObjectMapperBuilder().modules(new JsonNullableModule()).build();
+      JsonMapper mapper = JsonMapper.builder().addModule(new JsonNullableJackson3Module()).build();
 
       Sample result = mapper.readValue("{\"field\":\"hello\"}", Sample.class);
 
@@ -147,8 +145,7 @@ class GeneralExceptionHandlerITest {
 
     @Test
     void shouldDeserializeNullAsPresentNull() throws Exception {
-      ObjectMapper mapper =
-          new Jackson2ObjectMapperBuilder().modules(new JsonNullableModule()).build();
+      JsonMapper mapper = JsonMapper.builder().addModule(new JsonNullableJackson3Module()).build();
 
       Sample result = mapper.readValue("{\"field\":null}", Sample.class);
 

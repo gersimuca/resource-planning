@@ -9,7 +9,12 @@ import org.springframework.data.domain.Pageable;
 public interface InteractionService {
 
   Page<InteractionDto> search(
-      Long customerId, Long leadId, Type type, Status status, Long ownerId, Pageable pageable);
+      Long customerId,
+      Long leadId,
+      InteractionType type,
+      InteractionStatus status,
+      Long ownerId,
+      Pageable pageable);
 
   InteractionDto findById(Long id);
 
