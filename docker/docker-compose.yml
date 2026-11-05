@@ -68,7 +68,7 @@ services:
 
   prometheus:
     profiles: ["observability"]
-    image: prom/prometheus:v3.7.3
+    image: prom/prometheus:v3.16.0
     container_name: erp-prometheus
     ports:
       - "9090:9090"
