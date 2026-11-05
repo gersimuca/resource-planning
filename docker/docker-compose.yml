@@ -209,7 +209,7 @@ services:
 
   otel-collector:
     profiles: ["observability"]
-    image: otel/opentelemetry-collector-contrib:0.98.0
+    image: otel/opentelemetry-collector-contrib:0.164.0
     container_name: erp-otel-collector
     command: [ "--config=/etc/otelcol/config.yaml" ]
     volumes:
