@@ -82,7 +82,7 @@ services:
 
   grafana:
     profiles: ["observability"]
-    image: grafana/grafana:12.3.0
+    image: grafana/grafana:12.4.14
     container_name: erp-grafana
     ports:
       - "3000:3000"
