@@ -51,7 +51,7 @@ services:
   local-erp-sso:
     profiles: ["auth"]
     container_name: erp-sso
-    image: quay.io/keycloak/keycloak:26.7.1
+    image: quay.io/keycloak/keycloak:26.8.2
     volumes:
       - ./sso/import:/opt/keycloak/data/import
     environment:
