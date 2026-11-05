@@ -133,7 +133,7 @@ services:
 
   logstash:
     profiles: ["logging"]
-    image: docker.elastic.co/logstash/logstash:9.2.1
+    image: docker.elastic.co/logstash/logstash:9.5.6
     container_name: erp-logstash
     ports:
       - "15000:15000"
