@@ -27,14 +27,14 @@
         <springdoc-openapi-webmvc-ui.version>3.2.0</springdoc-openapi-webmvc-ui.version>
         <swagger.annotations.version>2.2.55</swagger.annotations.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <hibernate.jpa.modelgen.version>7.1.10.Final</hibernate.jpa.modelgen.version>
-        <archunit-junit5.version>1.5.0</archunit-junit5.version>
+        <hibernate.jpa.modelgen.version>7.4.14.Final</hibernate.jpa.modelgen.version>
+        <archunit-junit5.version>1.5.1</archunit-junit5.version>
         <jackson-databind-nullable.version>0.2.13</jackson-databind-nullable.version>
-        <msal4j.version>1.23.1</msal4j.version>
-        <spring-cloud.version>2025.1.3</spring-cloud.version>
+        <msal4j.version>1.26.0</msal4j.version>
+        <spring-cloud.version>2025.1.4</spring-cloud.version>
         <!-- Plugins -->
         <fmt-maven-plugin.version>2.29</fmt-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
         <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <codehaus-janino.version>3.1.12</codehaus-janino.version>
         <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
@@ -42,8 +42,8 @@
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.27.0</openapi-generator-maven-plugin.version>
         <mock-server-version>7.6.0</mock-server-version>
-        <error-prone-core.version>2.50.0</error-prone-core.version>
-        <nullaway.version>0.14.1</nullaway.version>
+        <error-prone-core.version>2.52.0</error-prone-core.version>
+        <nullaway.version>0.14.3</nullaway.version>
         <!-- JaCoCo Properties -->
         <jacoco.version>0.8.11</jacoco.version>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
@@ -51,16 +51,16 @@
         <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
         <sonar.language>java</sonar.language>
         <!-- OpenTelemetry Properties -->
-        <opentelemetry-bom.version>1.64.0</opentelemetry-bom.version>
-        <opentelemetry-spring-boot-starter.version>2.30.0</opentelemetry-spring-boot-starter.version>
+        <opentelemetry-bom.version>1.67.0</opentelemetry-bom.version>
+        <opentelemetry-spring-boot-starter.version>2.33.1</opentelemetry-spring-boot-starter.version>
         <!-- Apache Pekko -->
-        <pekko-actor-typed_2.13.version>1.1.2</pekko-actor-typed_2.13.version>
-        <pekko-slf4j_2.13.version>1.1.2</pekko-slf4j_2.13.version>
+        <pekko-actor-typed_2.13.version>1.7.1</pekko-actor-typed_2.13.version>
+        <pekko-slf4j_2.13.version>1.7.1</pekko-slf4j_2.13.version>
         <!-- SBOM -->
-        <cyclonedx-maven-plugin.version>2.9.2</cyclonedx-maven-plugin.version>
+        <cyclonedx-maven-plugin.version>2.9.3</cyclonedx-maven-plugin.version>
         <!-- File Import -->
-        <apache-poi.version>5.4.1</apache-poi.version>
-        <opencsv.version>5.10</opencsv.version>
+        <apache-poi.version>5.5.1</apache-poi.version>
+        <opencsv.version>5.12.0</opencsv.version>
         <!-- Sanitization -->
         <jsoup.version>1.24.1</jsoup.version>
         <!-- Utils -->
