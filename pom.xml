@@ -25,7 +25,7 @@
         <java.version>25</java.version>
         <!-- Dependencies -->
         <springdoc-openapi-webmvc-ui.version>3.2.0</springdoc-openapi-webmvc-ui.version>
-        <swagger.annotations.version>2.2.55</swagger.annotations.version>
+        <swagger.annotations.version>3.0.0</swagger.annotations.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <hibernate.jpa.modelgen.version>7.4.15.Final</hibernate.jpa.modelgen.version>
         <archunit-junit5.version>1.5.1</archunit-junit5.version>
@@ -41,7 +41,7 @@
         <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.27.0</openapi-generator-maven-plugin.version>
-        <mock-server-version>7.6.0</mock-server-version>
+        <mock-server-version>9.2.0</mock-server-version>
         <error-prone-core.version>2.52.0</error-prone-core.version>
         <nullaway.version>0.14.3</nullaway.version>
         <!-- JaCoCo Properties -->
@@ -54,12 +54,12 @@
         <opentelemetry-bom.version>1.68.0</opentelemetry-bom.version>
         <opentelemetry-spring-boot-starter.version>2.33.1</opentelemetry-spring-boot-starter.version>
         <!-- Apache Pekko -->
-        <pekko-actor-typed_2.13.version>1.7.1</pekko-actor-typed_2.13.version>
-        <pekko-slf4j_2.13.version>1.7.1</pekko-slf4j_2.13.version>
+        <pekko-actor-typed_2.13.version>2.0.0</pekko-actor-typed_2.13.version>
+        <pekko-slf4j_2.13.version>2.0.0</pekko-slf4j_2.13.version>
         <!-- SBOM -->
         <cyclonedx-maven-plugin.version>2.9.3</cyclonedx-maven-plugin.version>
         <!-- File Import -->
-        <apache-poi.version>5.5.1</apache-poi.version>
+        <apache-poi.version>6.0.0</apache-poi.version>
         <opencsv.version>5.12.0</opencsv.version>
         <!-- Sanitization -->
         <jsoup.version>1.24.1</jsoup.version>
