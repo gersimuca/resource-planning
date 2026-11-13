@@ -28,7 +28,7 @@ services:
 
   mongodb:
     profiles: ["core"]
-    image: mongo:8.0
+    image: mongo:9.0
     container_name: erp-mongodb
     restart: unless-stopped
     env_file:
@@ -82,7 +82,7 @@ services:
 
   grafana:
     profiles: ["observability"]
-    image: grafana/grafana:12.3.0
+    image: grafana/grafana:13.3.1
     container_name: erp-grafana
     ports:
       - "3000:3000"
@@ -185,7 +185,7 @@ services:
   kafka:
     profiles: ["messaging"]
     container_name: erp-kafka
-    image: confluentinc/cp-kafka:7.6.6
+    image: confluentinc/cp-kafka:8.4.1
     depends_on:
       - zookeeper
     environment:
@@ -229,7 +229,7 @@ services:
 
   redis:
     profiles: ["core"]
-    image: redis:7-alpine
+    image: redis:8-alpine
     container_name: erp-redis
     command: redis-server /usr/local/etc/redis/redis.conf
     volumes:
