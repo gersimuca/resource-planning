@@ -30,7 +30,7 @@
         <hibernate.jpa.modelgen.version>7.4.15.Final</hibernate.jpa.modelgen.version>
         <archunit-junit5.version>1.5.1</archunit-junit5.version>
         <jackson-databind-nullable.version>0.2.13</jackson-databind-nullable.version>
-        <msal4j.version>1.26.0</msal4j.version>
+        <msal4j.version>1.26.1</msal4j.version>
         <spring-cloud.version>2025.1.4</spring-cloud.version>
         <!-- Plugins -->
         <fmt-maven-plugin.version>2.29</fmt-maven-plugin.version>
