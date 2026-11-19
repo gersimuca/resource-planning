@@ -27,7 +27,7 @@
         <springdoc-openapi-webmvc-ui.version>3.2.0</springdoc-openapi-webmvc-ui.version>
         <swagger.annotations.version>3.0.0</swagger.annotations.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <hibernate.jpa.modelgen.version>7.4.16.Final</hibernate.jpa.modelgen.version>
+        <hibernate.jpa.modelgen.version>7.4.17.Final</hibernate.jpa.modelgen.version>
         <archunit-junit5.version>1.5.1</archunit-junit5.version>
         <jackson-databind-nullable.version>0.2.13</jackson-databind-nullable.version>
         <msal4j.version>1.26.1</msal4j.version>
