@@ -42,7 +42,7 @@
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.27.0</openapi-generator-maven-plugin.version>
         <mock-server-version>9.3.0</mock-server-version>
-        <error-prone-core.version>2.52.0</error-prone-core.version>
+        <error-prone-core.version>2.53.0</error-prone-core.version>
         <nullaway.version>0.14.4</nullaway.version>
         <!-- JaCoCo Properties -->
         <jacoco.version>0.8.11</jacoco.version>
@@ -52,7 +52,7 @@
         <sonar.language>java</sonar.language>
         <!-- OpenTelemetry Properties -->
         <opentelemetry-bom.version>1.68.0</opentelemetry-bom.version>
-        <opentelemetry-spring-boot-starter.version>2.33.1</opentelemetry-spring-boot-starter.version>
+        <opentelemetry-spring-boot-starter.version>2.34.0</opentelemetry-spring-boot-starter.version>
         <!-- Apache Pekko -->
         <pekko-actor-typed_2.13.version>2.0.0</pekko-actor-typed_2.13.version>
         <pekko-slf4j_2.13.version>2.0.0</pekko-slf4j_2.13.version>
