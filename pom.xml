@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.1.2</version>
+        <version>4.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -31,7 +31,7 @@
         <archunit-junit5.version>1.5.1</archunit-junit5.version>
         <jackson-databind-nullable.version>0.2.13</jackson-databind-nullable.version>
         <msal4j.version>1.26.1</msal4j.version>
-        <spring-cloud.version>2025.1.4</spring-cloud.version>
+        <spring-cloud.version>2025.1.5</spring-cloud.version>
         <!-- Plugins -->
         <fmt-maven-plugin.version>2.29</fmt-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
@@ -41,7 +41,7 @@
         <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
         <properties-maven-plugin.version>1.2.1</properties-maven-plugin.version>
         <openapi-generator-maven-plugin.version>7.27.0</openapi-generator-maven-plugin.version>
-        <mock-server-version>9.3.0</mock-server-version>
+        <mock-server-version>9.4.0</mock-server-version>
         <error-prone-core.version>2.53.0</error-prone-core.version>
         <nullaway.version>0.14.4</nullaway.version>
         <!-- JaCoCo Properties -->
